@@ -7,3 +7,6 @@ logging:
    org:
     springframework:
       security: DEBUG
+
+keystore:
+  password: mySecretKey

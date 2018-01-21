@@ -29,6 +29,14 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
                 .scopes("read", "write", "trust")
                 .secret("secret")
                 .accessTokenValiditySeconds(120)
+                .refreshTokenValiditySeconds(1200)
+                .and()
+                .withClient("new")
+                .authorizedGrantTypes("client_credentials", "refresh_token")
+                .authorities("ROLE_CLIENT")
+                .scopes("read")
+                .secret("secret")
+                .accessTokenValiditySeconds(120)
                 .refreshTokenValiditySeconds(1200);
     }
 }
